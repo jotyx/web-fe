@@ -5,24 +5,26 @@ import classnames from "classnames";
 
 import style from "./Text.module.scss";
 
-export const Text = ({value, fontSize, bold, textAlign, paragraphs}) => (
-    <ReactMarkdown
-        className={
-            classnames(
-                [style[fontSize]],
-                {
-                    [style.bold]: bold,
-                    [style.textAlignRight]: textAlign === Text.TextAlignEnum.RIGHT,
-                    [style.textAlignCenter]: textAlign === Text.TextAlignEnum.CENTER,
-                },
-            )
-        }
-        source={value}
-        renderers={{
-            root: paragraphs || textAlign ? "div" : "span",
-            paragraph: paragraphs ? "p" : Fragment,
-        }}
-    />
+export const Text = ({value, fontSize, bold, textAlign, paragraphs, color}) => (
+    <span style={{color}}>
+        <ReactMarkdown
+            className={
+                classnames(
+                    [style[fontSize]],
+                    {
+                        [style.bold]: bold,
+                        [style.textAlignRight]: textAlign === Text.TextAlignEnum.RIGHT,
+                        [style.textAlignCenter]: textAlign === Text.TextAlignEnum.CENTER,
+                    },
+                )
+            }
+            source={value}
+            renderers={{
+                root: paragraphs || textAlign ? "div" : "span",
+                paragraph: paragraphs ? "p" : Fragment,
+            }}
+        />
+    </span>
 );
 
 Text.SIZE = Object.freeze({
@@ -47,6 +49,7 @@ Text.propTypes = {
     bold: PropTypes.bool,
     textAlign: PropTypes.oneOf(Object.values(Text.TextAlignEnum)),
     paragraphs: PropTypes.bool,
+    color: PropTypes.string,
 };
 
 Text.defaultProps = {
@@ -54,4 +57,5 @@ Text.defaultProps = {
     bold: false,
     textAlign: undefined,
     paragraphs: false,
+    color: "#000000",
 };

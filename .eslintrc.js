@@ -25,7 +25,7 @@ module.exports = {
     }],
     "react/jsx-indent": ["error", 4],
     "react/jsx-indent-props": ["error", 4],
-    "max-len": ["error", 200],
+    // "max-len": ["error", 200],
     "quotes": 0,
     "no-console": ["error", {"allow": ["error"]}],
     "import/no-named-as-default": 0,

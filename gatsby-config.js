@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Template`,
-        description: `Template for the new site`,
+        title: `Skurla`,
+        description: `Web Development`,
         author: `@jotyx`,
     },
     plugins: [

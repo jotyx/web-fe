@@ -6,3 +6,7 @@ export {VerticalSpace} from "./VerticalSpace";
 export {Button} from "./Button";
 export {BackgroundBox} from "./BackgroundBox";
 export {Link} from "./Link";
+export {CenterLayout} from "./CenterLayout";
+export {ButtonBig} from "./ButtonBig";
+export {Icon} from "./Icon";
+export {ButtonWithIcon} from "./ButtonWithIcon";
